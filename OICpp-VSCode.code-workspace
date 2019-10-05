@@ -3,5 +3,16 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 50,
+		"editor.insertSpaces": false,
+		"editor.wrappingIndent": "deepIndent",
+		"workbench.tree.renderIndentGuides": "always",
+		"files.associations": {
+			"iostream": "cpp",
+			"ostream": "cpp"
+		}
+	}
 }

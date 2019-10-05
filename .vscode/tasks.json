@@ -29,11 +29,27 @@
 		{
 			"label": "WorkspaceCleanup",
 			"type": "shell",
-			"command": "ls $folder -r | % { if($_.name -match \"pch$\" -and $_.mode -notmatch \"d\"){ del $_.FullName}}",
+			"command": "Remove-Item",
 			"args": [
-				"/s",
-				"*.exe"
+				"*",
+				"-Include",
+				"*.exe",
+				"-Recurse"
 			]
+		},{
+			"label": "CppBuild11",
+			"type": "shell",
+			"command": "g++",
+			"args": [
+				"-std=c++11",
+				"${fileDirname}/${fileBasenameNoExtension}.cpp",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}.exe"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
 		}
 	]
 }

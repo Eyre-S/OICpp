@@ -33,6 +33,35 @@
 			"externalConsole": false,
 			"preLaunchTask": "CppBuild03",
 			"postDebugTask": "CleanupEXE"
+		},{
+			"name": "Cpp Console Run",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${fileBasenameNoExtension}.exe",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": true,
+			"preLaunchTask": "CppBuild03",
+			"postDebugTask": "CleanupEXE"
+		},{
+			"name": "OICpp Test C++11",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${fileBasenameNoExtension}.exe",
+			"args": [
+				"<",
+				"${fileBasenameNoExtension}.in",
+				">",
+				"${fileBasenameNoExtension}.out"
+			],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"preLaunchTask": "CppBuild11",
+			"postDebugTask": "CleanupEXE"
 		}
 	]
 }
