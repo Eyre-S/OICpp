@@ -1,0 +1,39 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "CppBuild03",
+			"type": "shell",
+			"command": "g++",
+			"args": [
+				"-std=c++03",
+				"${fileDirname}/${fileBasenameNoExtension}.cpp",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}.exe"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "CleanupEXE",
+			"type": "shell",
+			"command": "del",
+			"args": [
+				"${fileDirname}/${fileBasenameNoExtension}.exe"
+			]
+		},
+		{
+			"label": "WorkspaceCleanup",
+			"type": "shell",
+			"command": "ls $folder -r | % { if($_.name -match \"pch$\" -and $_.mode -notmatch \"d\"){ del $_.FullName}}",
+			"args": [
+				"/s",
+				"*.exe"
+			]
+		}
+	]
+}
