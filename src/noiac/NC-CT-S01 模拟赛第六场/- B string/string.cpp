@@ -43,6 +43,7 @@
  首段祭神
 */
 #include <iostream>
+#include <cstdio>
 
 using namespace std;
 
@@ -105,7 +106,6 @@ int main () {
 		}
 		
 		// 输出
-		out_time:
 		if (!all_phrase) {
 			cout << 1 << endl;
 			continue;
