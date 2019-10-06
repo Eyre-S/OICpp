@@ -59,7 +59,8 @@ int main () {
 		getchar();
 		cin >> common_str;
 		
-		cout << common_str << endl;
+		// // INPUT测试
+		// cout << common_str << endl;
 		
 		// 判断初始串是否为回文串
 		register int mid_l = 0, mid_r = 0;
@@ -71,9 +72,13 @@ int main () {
 			mid_r = mid_l;
 		}
 		register bool all_phrase = true;
+		register bool all_equal = true;
 		for (register int m = 0; all_phrase; m++) {
+			if (common_str[mid_r] != common_str[mid_r+m])
+				all_equal = false;
 			if (common_str[mid_l-m] != common_str[mid_r+m]) {
 				all_phrase = false;
+				all_equal = false;
 				break;
 			} else {
 				if (mid_l - m == 0) {
@@ -81,8 +86,17 @@ int main () {
 				}
 			}
 		}
+		if (!all_phrase) {
+			goto out_time;
+		}
 		
-		if (all_phrase) {
+		// 判断是否为不可删除串
+		if (all_equal)
+			goto out_time;
+		
+		// 输出
+		out_time:
+		if (!all_phrase) {
 			cout << 1 << endl;
 			continue;
 		} else if (
