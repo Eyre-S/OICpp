@@ -86,17 +86,22 @@ int main () {
 				}
 			}
 		}
-		if (!all_phrase) {
-			goto out_time;
-		}
 		
 		// 判断是否为不可删除串
-		if (all_equal)
-			goto out_time;
-		register bool no_del;
-		if (str_len == 3 && common_str[0] == common_str[2]) {
-			no_del = true;
-			goto out_time;
+		register char sono = common_str[0];
+		register char sampa = common_str[1];
+		register bool ababa = true;
+		for (register int i = 2; i < str_len; i += 2) {
+			if (i == str_len - 1) {
+				if (common_str[i] != sono) {
+					ababa = false;
+				}
+				break;
+			}
+			if (common_str[i] != sono && common_str[i+1] != sampa) {
+				ababa = false;
+				break;
+			}
 		}
 		
 		// 输出
@@ -104,15 +109,9 @@ int main () {
 		if (!all_phrase) {
 			cout << 1 << endl;
 			continue;
-		} else if (
-			(str_len == 2 && common_str[0] == common_str[1]) ||
-			(str_len == 3 && (
-				common_str[0] == common_str[2] ||
-				common_str[1] == common_str[2]
-			))
-		) {
+		} else if (all_equal || ababa) {
 			cout << -1 << endl;
-			break;
+			continue;
 		} else {
 			cout << 2 << endl;
 		}
