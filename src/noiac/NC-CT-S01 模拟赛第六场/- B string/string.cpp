@@ -68,7 +68,7 @@ int main () {
 			mid_r = str_len / 2 - 1;
 			mid_l = mid_r - 1;
 		} else {
-			mid_l = str_len / 2 - 1;
+			mid_l = str_len / 2;
 			mid_r = mid_l;
 		}
 		register bool all_phrase = true;
@@ -93,6 +93,11 @@ int main () {
 		// 判断是否为不可删除串
 		if (all_equal)
 			goto out_time;
+		register bool no_del;
+		if (str_len == 3 && common_str[0] == common_str[2]) {
+			no_del = true;
+			goto out_time;
+		}
 		
 		// 输出
 		out_time:
