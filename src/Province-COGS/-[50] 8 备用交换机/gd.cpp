@@ -10,7 +10,7 @@
  * COGS - 备用交换机（求割点裸题）
  * 作者：Cookie Sukazyo Eyre
  *
- * 使用算法：tarjan
+ * 代码思想：tarjan
  * 存图类型：数组型邻接表
  *
  */
@@ -39,7 +39,8 @@ int dfn[100] = {0};// 搜索ID
 int tag[100] = {0}; // 强连通标签
 bool alive[10000]; // 线段是否可用（未访问过）
 
-int rootSingle = -1;
+// 根节点子树计数
+int rootChild = 0;
 
 // 函数声明
 int dfs (int);
@@ -76,10 +77,6 @@ int main () {
 		to[i+1] = ca;
 		alive[i] = true;
 		alive[i+1] = true;
-		if (ca == 0 || cb == 0) {
-			// cout << "RootSingle++" << endl;
-			rootSingle++;
-		}
 	}
 	
 	// for (int i = 0; i < 10000; i++) {
@@ -87,6 +84,10 @@ int main () {
 	// }
 	
 	dfs(0);
+	
+	// cout << "Root " << rootChild << endl;
+	if (rootChild > 1)
+		cut[0] = true;
 	
 	// for (int i = 0; i < citiesNum; i++) {
 	// 	cout << i+1 << "\t" << dfn[i] << "\t" << tag[i] << endl;
@@ -126,6 +127,10 @@ int dfs (int node) {
 		while ((l = line[node]) != -1) {
 			line[node] = nextl[l];
 			if (alive[l]) {
+				if (node == 0) {
+					// cout << " - Root child found!" << endl;
+					rootChild++;
+				}
 				alive[l] = false;
 				if (to[l+1] == node)
 					alive[l+1] = false;
@@ -136,14 +141,8 @@ int dfs (int node) {
 				if (tag[node] > childTag)
 					tag[node] = childTag;
 				if (childTag >= dfn[node]) {
-					if (node != 0) {
+					if (node != 0)
 						cut[node] = true;
-					} else {
-						if (rootSingle > 0) {
-							if (childTag > dfn[node])
-							cut[0] = true;
-						}
-					}
 				}
 			}
 		}
@@ -152,5 +151,5 @@ int dfs (int node) {
 	// cout << "left " << node + 1 << " return " << tag[node] << endl;
 	
 	return tag[node];
-
+	
 }
