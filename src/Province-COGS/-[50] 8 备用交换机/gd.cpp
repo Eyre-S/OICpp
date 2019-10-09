@@ -38,9 +38,11 @@ int to[10000]; // 线段目标节点
 int dfn[100] = {0};// 搜索ID
 int tag[100] = {0}; // 强连通标签
 bool alive[10000]; // 线段是否可用（未访问过）
+bool checked[100]; // 点是否访问过
 
 // 根节点子树计数
-int rootChild = 0;
+int rootChild = 0; // 根节点子树数量
+int root_id = 0; // 根节点的id
 
 // 函数声明
 int dfs (int);
@@ -83,7 +85,15 @@ int main () {
 	// 	cout << i << "\t" << to[i] << "\t" << nextl[i] << endl;
 	// }
 	
-	dfs(0);
+	for (register int i = 0; i < citiesNum; i++) {
+		if (checked[i] == false) {
+			root_id = i; rootChild = 0;
+			dfs(i);
+			if (rootChild > 1) {
+				cut[i] = true;
+			}
+		}
+	}
 	
 	// cout << "Root " << rootChild << endl;
 	if (rootChild > 1)
@@ -118,6 +128,8 @@ int dfs (int node) {
 	// cout << "Enter " << node + 1 << endl;
 	if(dfn[node] == 0) {
 		
+		checked[node] = true;
+		
 		dfn[node] = indexs;
 		tag[node] = indexs;
 		indexs++;
@@ -127,7 +139,7 @@ int dfs (int node) {
 		while ((l = line[node]) != -1) {
 			line[node] = nextl[l];
 			if (alive[l]) {
-				if (node == 0) {
+				if (node == root_id) {
 					// cout << " - Root child found!" << endl;
 					rootChild++;
 				}
