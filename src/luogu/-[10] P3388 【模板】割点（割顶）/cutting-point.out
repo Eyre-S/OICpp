@@ -1,0 +1,31 @@
+Enter 1
+ - entered indexd 1
+ - Root child found!
+ - Goto 2
+Enter 2
+ - entered indexd 2
+ - Goto 3
+Enter 3
+ - entered indexd 3
+left 3 return 3
+ - Node 2 CUT!
+left 2 return 2
+left 1 return 1
+Root 1 childs 1
+Enter 4
+ - entered indexd 4
+ - Root child found!
+ - Goto 6
+Enter 6
+ - entered indexd 5
+left 6 return 5
+ - Root child found!
+ - Goto 5
+Enter 5
+ - entered indexd 6
+left 5 return 6
+left 4 return 4
+Root 4 childs 2
+Root 4 CUT！
+2
+2 4 

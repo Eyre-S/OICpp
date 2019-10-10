@@ -113,9 +113,10 @@ int main () {
 	cout << counter << endl;
 	for (int i = 0; i < citiesNum; i++) {
 		if (cut[i] == true) {
-			cout << i + 1 << endl;
+			cout << i + 1 << ' ';
 		}
 	}
+	cout << endl;
 	
 	return 0;
 }
@@ -151,7 +152,7 @@ int dfs (int node) {
 				if (tag[node] > childTag)
 					tag[node] = childTag;
 				if (childTag >= dfn[node]) {
-					if (node != 0) {
+					if (node != root_id) {
 						// cout << " - Node " << node + 1 << " CUT!" << endl;
 						cut[node] = true;
 					}
