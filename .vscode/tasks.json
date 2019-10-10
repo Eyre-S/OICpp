@@ -21,8 +21,9 @@
 		{
 			"label": "CleanupEXE",
 			"type": "shell",
-			"command": "del",
+			"command": "Remove-Item",
 			"args": [
+				"-LiteralPath",
 				"${fileDirname}/${fileBasenameNoExtension}.exe"
 			]
 		},
