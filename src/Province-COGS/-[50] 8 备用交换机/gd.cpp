@@ -89,15 +89,17 @@ int main () {
 		if (checked[i] == false) {
 			root_id = i; rootChild = 0;
 			dfs(i);
+			// cout << "Root " << root_id + 1 << " childs " << rootChild << endl;
 			if (rootChild > 1) {
+				// cout << "Root " << i + 1 << " CUT！" << endl;
 				cut[i] = true;
 			}
 		}
 	}
 	
-	// cout << "Root " << rootChild << endl;
-	if (rootChild > 1)
-		cut[0] = true;
+	// // cout << "Root " << rootChild << endl;
+	// if (rootChild > 1)
+	// 	cut[0] = true;
 	
 	// for (int i = 0; i < citiesNum; i++) {
 	// 	cout << i+1 << "\t" << dfn[i] << "\t" << tag[i] << endl;
@@ -153,8 +155,10 @@ int dfs (int node) {
 				if (tag[node] > childTag)
 					tag[node] = childTag;
 				if (childTag >= dfn[node]) {
-					if (node != 0)
+					if (node != root_id) {
+						// cout << " - Node " << node + 1 << " CUT!" << endl;
 						cut[node] = true;
+					}
 				}
 			}
 		}
