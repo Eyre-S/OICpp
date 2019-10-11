@@ -31,13 +31,13 @@ bool cut[20000]; // 是否为切点
 
 // 图储存
 int line[20000]; // 节点的最后一条线段
-int nextl[100000]; // 线段的邻线段
-int to[100000]; // 线段目标节点
+int nextl[200000]; // 线段的邻线段
+int to[200000]; // 线段目标节点
 
 // 搜索相关
 int dfn[20000] = {0};// 搜索ID
 int tag[20000] = {0}; // 强连通标签
-bool alive[100000]; // 线段是否可用（未访问过）
+bool alive[200000]; // 线段是否可用（未访问过）
 bool checked[20000]; // 点是否访问过
 
 // 根节点子树计数
@@ -85,9 +85,9 @@ int main () {
 		if (checked[i] == false) {
 			root_id = i; rootChild = 0;
 			dfs(i);
-			// cout << "Root " << root_id + 1 << " childs " << rootChild << endl;
+			cout << "Root " << root_id + 1 << " childs " << rootChild << endl;
 			if (rootChild > 1) {
-				// cout << "Root " << i + 1 << " CUT！" << endl;
+				cout << "Root " << i + 1 << " CUT！" << endl;
 				cut[i] = true;
 			}
 		}
@@ -124,7 +124,7 @@ int main () {
 // tarjan搜索主循环
 int dfs (int node) {
 	
-	// cout << "Enter " << node + 1 << endl;
+	cout << "Enter " << node + 1 << endl;
 	if(dfn[node] == 0) {
 		
 		checked[node] = true;
@@ -133,13 +133,13 @@ int dfs (int node) {
 		tag[node] = indexs;
 		indexs++;
 		
-		// cout << " - entered" << " indexd " << dfn[node] << endl;
+		cout << " - entered" << " indexd " << dfn[node] << endl;
 		int l;
 		while ((l = line[node]) != -1) {
 			line[node] = nextl[l];
 			if (alive[l]) {
 				if (node == root_id) {
-					// cout << " - Root child found!" << endl;
+					cout << " - Root child found!" << endl;
 					rootChild++;
 				}
 				alive[l] = false;
@@ -147,13 +147,13 @@ int dfs (int node) {
 					alive[l+1] = false;
 				else
 					alive[l-1] = false;
-				// cout << " - Goto " << to[l] + 1 << endl;
+				cout << " - Goto " << to[l] + 1 << endl;
 				int childTag = dfs(to[l]);
 				if (tag[node] > childTag)
 					tag[node] = childTag;
 				if (childTag >= dfn[node]) {
 					if (node != root_id) {
-						// cout << " - Node " << node + 1 << " CUT!" << endl;
+						cout << " - Node " << node + 1 << " CUT!" << endl;
 						cut[node] = true;
 					}
 				}
@@ -161,7 +161,7 @@ int dfs (int node) {
 		}
 	}
 	
-	// cout << "left " << node + 1 << " return " << tag[node] << endl;
+	cout << "left " << node + 1 << " return " << tag[node] << endl;
 	
 	return tag[node];
 	
