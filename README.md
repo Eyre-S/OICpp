@@ -21,24 +21,6 @@
 					<p style="background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:14px;color:#555555;">
 						NOI.AC&nbsp&nbsp&nbsp&nbsp&nbsp<a href="http://noi.ac/user/profile/Eyre_S">Eyre_S</a><br />
 					</p>
-					<style type="text/css">
-						a {
-							text-decoration:none;
-							color:#12addb;
-						}
-						a:link {
-							text-decoration:none;
-						}
-						a:visited {
-							text-decoration:none;
-						}
-						a:hover {
-							text-decoration:none;
-						}
-						a:active {
-							text-decoration:none;
-				}
-			</style>
 		</div>
 	</div>
 </td></tr></tbody></table>
