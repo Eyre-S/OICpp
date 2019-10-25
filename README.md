@@ -1,5 +1,3 @@
-{::nomarkdown}
-<!--- 此处为更新的，使用 HTML 的 Git 库注释文件 -->
 <table style="width: 99.8%;height:99.8% "><tbody><tr><td style="background:#fafafa url(https://a.photo/images/2018/03/24/2017113018325846288465.png)">
 			<div style="border-radius: 10px 10px 10px 10px;font-size:13px;    color: #555555;width: 666px;font-family:'Century Gothic','Trebuchet MS','Hiragino Sans GB',微软雅黑,'Microsoft Yahei',Tahoma,Helvetica,Arial,'SimSun',sans-serif;margin:50px auto;border:1px solid #eee;max-width:100%;background: #ffffff repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);">
 				<div style="width:100%;background:#49BDAD;color:#ffffff;border-radius: 10px 10px 0 0;background-image: -moz-linear-gradient(0deg, rgb(67, 198, 184), rgb(255, 209, 244));background-image: -webkit-linear-gradient(0deg, rgb(67, 198, 184), rgb(255, 209, 244));">
@@ -39,11 +37,11 @@
 						}
 						a:active {
 							text-decoration:none;
-						}
-					</style>
-				</div>
-			</div>
-		</td></tr></tbody></table>
+				}
+			</style>
+		</div>
+	</div>
+</td></tr></tbody></table>
 
 
 <!--- 以下为之前的 Markdown 代码 ---><!--- 
