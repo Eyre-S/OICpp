@@ -1,8 +1,7 @@
 
 <p align="center">
-	<img width = '150' src ="https://sukazyo.cc/header-round/"/><br>
-	<font size="7">Cookie Sukazyo Eyre</font><br>
-	Gitcard of
+	Gitcard of<br><br>
+	<img height = '100' src ="https://sukazyo.cc/logo-v3-full/"/>
 </p>
 
 <br>
