@@ -109,8 +109,13 @@ int main () {
 		}
 	}
 	
+	// 输出
 	for (register int i = 1; i < dot_count + 1; i++) {
-		cout << shortest[i] << ' ';
+		if (shortest[i] == -1) {
+			cout << 2147483647 << ' ';
+		} else {
+			cout << shortest[i] << ' ';
+		}
 	}
 	
 }
