@@ -8,7 +8,7 @@
  * 
  * 【LGR-062】洛谷10月月赛 III div.2
  * 
- * 洛谷 - LGR-062-A 洛谷10月月赛 III div.2
+ * 洛谷 - T104062 小D与笔试
  * 链接 https://www.luogu.org/problem/T104062?contestId=22461
  * 作者：Cookie Sukazyo Eyre
  * 
