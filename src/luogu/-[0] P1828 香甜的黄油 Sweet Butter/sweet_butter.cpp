@@ -60,9 +60,10 @@ int main () {
 		cow_in_farm[cow]++;
 	}
 	
-	for (register int i = 0, id = 0, px, py, len; i < road_count; i++) {
+	for (register int i = 0, id = 0, px, py, len; i < road_count; i++, id += 2) {
 		cin >> px >> py >> len;
-		id = i * 2;
+		px--; py--;
+		// cout << px << py << len << endl;
 		if (farm_road[px] != -1)
 			road_next[id] = farm_road[px];
 		farm_road[px] = id;
@@ -75,9 +76,24 @@ int main () {
 		road_distance[id + 1] = len;
 	}
 	
+	// 图输出测试
+	for (register int i = 0; i < farm_count; i++) {
+		cout << farm_road[i] << '\t';
+	}cout << endl;
+	for (register int i = 0; i < road_count; i++) {
+		cout << road_to[i] << '\t';
+	}cout << endl;
+	for (register int i = 0; i < road_count; i++) {
+		cout << road_next[i] << '\t';
+	}cout << endl;
+	
 	for (register int i = 0; i < farm_count; i++) {
 		
 		shortest_path(i);
+		
+		for (register int i = 0; i < farm_count; i++) {
+			cout << shortest[i] << ' ';
+		} cout << endl;
 		
 		register int sum = 0;
 		for (register int m = 0; m < farm_count; m++) {
@@ -91,7 +107,7 @@ int main () {
 		
 	}
 	
-	cout << curr_farm << endl;
+	cout << curr_farm + 1 << endl;
 	
 	return 0;
 	
@@ -115,6 +131,7 @@ void shortest_path (int root) {
 				}
 			}
 		}
+		cout << "Root " << farm_id << endl;
 		searched[farm_id] = true;
 		if (farm_id == -1) {
 			break;
@@ -124,7 +141,7 @@ void shortest_path (int root) {
 			register int road_id = farm_road[farm_id];
 			farm_road[farm_id] = road_next[road_id];
 			register int curr_len = shortest[farm_id] + road_distance[road_id];
-			if (shortest[road_to[road_id]] > curr_len) {
+			if (shortest[road_to[road_id]] == -1 ||shortest[road_to[road_id]] > curr_len) {
 				shortest[road_to[road_id]] = curr_len;
 			}
 		}
