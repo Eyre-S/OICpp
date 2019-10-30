@@ -57,14 +57,14 @@ int main () {
 			// cout << min << endl;
 			// 如果存在工作段
 			if (road[i] == 0 /* 部分路段 */|| i == road_len - 1 /* 全部路段 */) {
-				if (i == road_len - 1) {
-					// 对全部路段进行特殊处理
+				if (i == road_len - 1 && road[i] != 0) {
+					// 对全部路段进行最后一位的特殊处理
 					if (road[i] < min) {
 						// 找到最小值
 						min = road[i];
 						now_zero = 1;
 						#ifdef DEBUG
-							cout << "Resize zero" << endl;
+							cout << "Resize last zero as " << min << " at " << i << endl;
 						#endif
 					}
 					i++;
@@ -99,7 +99,7 @@ int main () {
 				min = road[i];
 				now_zero = 1;
 				#ifdef DEBUG
-					cout << "Resize zero" << endl;
+					cout << "Resize zero as " << min << endl;
 				#endif
 			} else if (road[i] == min) {
 				// 找到和最小值同样的值
