@@ -13,6 +13,8 @@
  *
  **/
 
+// #define DEBUG
+
 #include <iostream>
 
 using namespace std;
@@ -42,11 +44,15 @@ int main () {
 						// 找到最小值
 						min = road[i];
 						now_zero = 1;
-						cout << "Resize zero" << endl;
+						#ifdef DEBUG
+							cout << "Resize zero" << endl;
+						#endif
 					}
 					i++;
 				}
-				cout << "Find workspace from " << start << " to " << i - 1 << endl;
+				#ifdef DEBUG
+					cout << "Find workspace from " << start << " to " << i - 1 << endl;
+				#endif
 				// 循环铺平路段
 				for (register int p = start; p < i; p++) {
 					road[p] -= min;
@@ -54,33 +60,43 @@ int main () {
 				// 记录本次工作
 				work_times += min;
 				total_zero += now_zero;
-				cout << " - Zero add " << now_zero << " to " << total_zero << endl;
-				cout << " - ";for (register int p = 0; p < road_len; p++) {
-					cout << road[p] << ' ';
-				}cout << endl;
-				cout << " - Worked " << work_times << endl;
+				#ifdef DEBUG
+					cout << " - Zero add " << now_zero << " to " << total_zero << endl;
+					cout << " - ";for (register int p = 0; p < road_len; p++) {
+						cout << road[p] << ' ';
+					}cout << endl;
+					cout << " - Worked " << work_times << endl;
+				#endif
 				while (road[i] == 0 && i < road_len) {
 					i++;
 				} start = i; i--;
 				min = 10001; now_zero = 0;
-				cout << " - " << start << ' ' << i << endl;
+				#ifdef DEBUG
+					cout << " - " << start << ' ' << i << endl;
+				#endif
 			} else if (road[i] < min) {
 				// 找到最小值
 				min = road[i];
 				now_zero = 1;
-				cout << "Resize zero" << endl;
+				#ifdef DEBUG
+					cout << "Resize zero" << endl;
+				#endif
 			} else if (road[i] == min) {
 				// 找到和最小值同样的值
 				now_zero++;
-				cout << " - Zero++ to " << now_zero << endl;
+				#ifdef DEBUG
+					cout << " - Zero++ to " << now_zero << endl;
+				#endif
 			}
 		}
 		// cout << total_zero << endl;
 	}
 	
-	for (register int i = 0; i < road_len; i++) {
-		cout << road[i] << ' ';
-	}cout << endl;
+	#ifdef DEBUG
+		for (register int i = 0; i < road_len; i++) {
+			cout << road[i] << ' ';
+		}cout << endl;
+	#endif
 	
 	cout << work_times << endl;
 	
