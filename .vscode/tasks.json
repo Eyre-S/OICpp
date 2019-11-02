@@ -9,6 +9,12 @@
 			"command": "g++",
 			"args": [
 				"-std=c++03",
+				"-Wall",
+				"-Wextra",
+				"-Wfatal-errors",
+				"-pedantic-errors",
+				"-D",
+				"DEBUG",
 				"${fileDirname}/${fileBasenameNoExtension}.cpp",
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}.exe"
