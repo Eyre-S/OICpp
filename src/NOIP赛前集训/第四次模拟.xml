@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Sukazyo>
+	<contest>
+		<name>第四次模拟</name>
+		<platform>LYB</platform>
+		<subject sub="1">
+			<name>铺设道路</name>
+			<id>road-laying</id>
+			<confirm-id>road</confirm-id>
+			<source platform="noip" year="2018" id="D1T1">Day1 T1铺设道路</source>
+			<ojsource platform="luogu" id="P5019">P5019 铺设道路</ojsource>
+			<link>https://www.luogu.org/problem/P5019</link>
+		</subject>
+		<subject sub="2">
+			<name>货币系统</name>
+			<id>money-system</id>
+			<confirm-id>money</confirm-id>
+			<source platform="noip" year="2018" id="D1T2">Day1 T2货币系统</source>
+			<ojsource platform="luogu" id="P5020">P5020 货币系统</ojsource>
+			<link>https://www.luogu.org/problem/P5020</link>
+		</subject>
+		<subject sub="3">
+			<name>赛道修建</name>
+			<id>track-construction</id>
+			<confirm-id>track</confirm-id>
+			<source platform="noip" year="2018" id="D1T3">Day1 T3赛道修建</source>
+			<ojsource platform="luogu" id="P5021">P5021 赛道修建</ojsource>
+			<link>https://www.luogu.org/problem/P5021</link>
+		</subject>
+	</contest>
+</Sukazyo>

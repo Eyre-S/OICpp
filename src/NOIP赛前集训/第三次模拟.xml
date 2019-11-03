@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Sukazyo>
+	<contest>
+		<name>第三次模拟</name>
+		<platform>LYB</platform>
+		<subject sub="1">
+			<name>借教室</name>
+			<id>classrooms</id>
+			<source platform="luogu" id="P1083">P1083 借教室</source>
+			<link>https://www.luogu.org/problem/P1083</link>
+		</subject>
+		<subject sub="2">
+			<name>搭配飞行员</name>
+			<id>flyer</id>
+			<source platform="cogs" id="14">14. [网络流24题] 搭配飞行员</source>
+			<link>http://cogs.pro:8080/cogs/problem/problem.php?pid=liyxxmJkq</link>
+		</subject>
+		<subject sub="3">
+			<name>香甜的黄油</name>
+			<id>sweet_butter</id>
+			<source platform="luogu" id="P1828">P1828 香甜的黄油 Sweet Butter</source>
+			<link>https://www.luogu.org/problem/P1828</link>
+		</subject>
+	</contest>
+</Sukazyo>
