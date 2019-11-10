@@ -4,7 +4,9 @@ using namespace std;
 
 int main () {
 	
-	cout << "Hello World" << endl;
+	int a = 2, b = 3, c = 0;
+	
+	cout << (c = a * b, c) << endl;
 	
 	return 0;
 	
