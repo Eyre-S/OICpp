@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Sukazyo>
+	<topic>
+		<name>积木大赛</name>
+		<source platform="noip" year="2013" id="D2T1">Day2 T1积木大赛</source>
+		<ojsource platform="luogu" id="P1969">P1969 积木大赛</ojsource>
+		<link>https://www.luogu.org/problem/P1969</link>
+		<code platform="luogu" id="P5019">P5019 铺设道路</code>
+	</topic>
+</Sukazyo>
