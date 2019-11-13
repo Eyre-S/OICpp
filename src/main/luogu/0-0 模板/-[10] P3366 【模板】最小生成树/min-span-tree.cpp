@@ -52,6 +52,11 @@ int main () {
 	int from, to, len;
 	for (register int i = 0; i < line_count; i++) {
 		cin >> from >> to >> len;
+		// 排除自环干扰
+		if (from == to) {
+			i--;
+			continue;
+		}
 		add_line(from, to, len, i * 2);
 		add_line(to, from, len, i * 2 + 1);
 	}
