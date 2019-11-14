@@ -44,9 +44,9 @@ int main () {
 	for (register int i = 0; i < action_set; i++) {
 		cin >> act >> one >> another;
 		if (act == 1) {
-			link(one, another);
+			link(one-1, another-1);
 		} else {
-			cout << (check(one, another)?'Y':'N') << endl;
+			cout << (check(one-1, another-1)?'Y':'N') << endl;
 		}
 	}
 	
@@ -59,6 +59,7 @@ void link (int first, int second) {
 	child[first].push_back(second);
 	for (list<int>::iterator i = child[second].begin(); i != child[second].end(); i++) {
 		node_father[*i] = node_father[first];
+		child[first].push_back(*i);
 	}
 	child[second].clear();
 }
