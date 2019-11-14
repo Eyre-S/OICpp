@@ -15,7 +15,7 @@
  */
 
 #include <iostream>
-#include <list>
+// #include <list>
 
 using namespace std;
 
@@ -23,10 +23,10 @@ int element_count;
 int action_set;
 
 int node_father[10000];
-list<int> child[10000];
 
 void link (int, int);
 bool check (int, int);
+int father (int);
 
 int main () {
 	
@@ -55,15 +55,13 @@ int main () {
 }
 
 void link (int first, int second) {
-	node_father[second] = node_father[first];
-	child[first].push_back(second);
-	for (list<int>::iterator i = child[second].begin(); i != child[second].end(); i++) {
-		node_father[*i] = node_father[first];
-		child[first].push_back(*i);
-	}
-	child[second].clear();
+	node_father[father(second)] = father(first);
 }
 
 inline bool check (int a, int b) {
-	return (node_father[a] == node_father[b] || node_father[a] == b || a == node_father[b] ) ? true : false;
+	return (father(a) == father(b)) ? true : false;
+}
+
+int father(int id) {
+	return node_father[id] == id ? id : node_father[id] = father(node_father[id]);
 }
