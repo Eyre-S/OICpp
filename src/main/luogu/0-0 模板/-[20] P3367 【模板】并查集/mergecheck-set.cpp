@@ -30,11 +30,15 @@ bool check (int, int);
 
 int main () {
 	
+	#ifdef DEBUG
+		cout << "HELLO WORLD!" << endl;
+	#endif
+	
+	cin >> element_count >> action_set;
+	
 	for (register int i = 0; i < element_count; i++) {
 		node_father[i] = i;
 	}
-	
-	cin >> element_count >> action_set;
 	
 	int act, one, another;
 	for (register int i = 0; i < action_set; i++) {
