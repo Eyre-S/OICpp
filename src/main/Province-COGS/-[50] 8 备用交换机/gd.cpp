@@ -49,6 +49,8 @@ int dfs (int);
 
 int main () {
 	
+	std::ios::sync_with_stdio(false);
+	
 	// 重定向IO
 	freopen("gd.in", "r", stdin);
 	freopen("gd.out", "w", stdout);

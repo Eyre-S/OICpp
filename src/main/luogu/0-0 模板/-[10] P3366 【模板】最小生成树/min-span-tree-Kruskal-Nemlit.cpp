@@ -20,12 +20,12 @@
  */
 
 #include<bits/stdc++.h>
-
+ 
 using namespace std;
-
+ 
 #define re register
 #define il inline
-
+ 
 il int read()
 {
     re int x=0,f=1;char c=getchar();
@@ -33,27 +33,27 @@ il int read()
     while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=getchar();
     return x*f;
 }
-
+ 
 struct Edge
 {
     int u,v,w;
 }edge[200005];
-
+ 
 int fa[5005],n,m,ans,eu,ev,cnt;
-
+ 
 il bool cmp(Edge a,Edge b)
 {
     return a.w<b.w;
 }
 //快排的依据（按边权排序）
-
+ 
 il int find(int x)
 {
     while(x!=fa[x]) x=fa[x]=fa[fa[x]];
     return x;
 }
 //并查集循环实现模板，及路径压缩，不懂并查集的同学可以戳一戳代码上方的“并查集详解”
-
+ 
 il void kruskal()
 {
     sort(edge,edge+m,cmp);
@@ -82,7 +82,7 @@ il void kruskal()
         
     }
 }
-
+ 
 int main()
 {
     n=read(),m=read();
